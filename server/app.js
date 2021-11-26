@@ -3,6 +3,8 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const mongoose = require('mongoose');
+const debug = require('debug')('api:');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -15,6 +17,21 @@ const {
 } = require('./config/config');
 
 const jwtAuth = require('./config/authentication');
+
+mongoose.connect(
+  database,
+  {
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+  },
+).then(() => {
+  debug('DataBase Connected');
+  debug(`app listening on port ${port}!`);
+})
+  .catch(err => {
+    debug(`update error:  ${err}`);
+  });
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
