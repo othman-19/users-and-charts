@@ -62,7 +62,7 @@ app.use(methodOverride((req, res) => {
 }));
 
 app.use('/', indexRouter);
-app.use('/api/v1/users', usersRouter);
+app.use('/api/v1/users', jwtAuth, usersRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
