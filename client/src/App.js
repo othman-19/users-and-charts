@@ -1,12 +1,10 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
-function App() {
+const App = function () {
   return (
-    <div className="App">
-      
-    </div>
+    <div className="App" />
   );
-}
+};
 
 export default App;
