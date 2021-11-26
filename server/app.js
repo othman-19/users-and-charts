@@ -7,17 +7,14 @@ const mongoose = require('mongoose');
 const debug = require('debug')('api:');
 const cors = require('cors');
 
+const jwtAuth = require('./config/authentication');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-
-const app = express();
 
 const {
   database,
   port,
 } = require('./config/config');
-
-const jwtAuth = require('./config/authentication');
 
 mongoose.connect(
   database,
@@ -33,9 +30,7 @@ mongoose.connect(
     debug(`update error:  ${err}`);
   });
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+const app = express();
 
 app.use(logger('dev'));
 app.use(express.json());
