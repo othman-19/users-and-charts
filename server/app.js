@@ -9,6 +9,8 @@ const cors = require('cors');
 const methodOverride = require('method-override');
 
 const jwtAuth = require('./config/authentication');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
 
 const {
   database,
