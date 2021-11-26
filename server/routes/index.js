@@ -12,8 +12,17 @@ router.get('/users.xml', async (req, res, next) => {
       let data = '<?xml version="1.0" encoding="UTF-8"?>';
       data += '<users>';
       users.forEach(user => {
-        const { name } = user.toObject();
-        data += `<user> <name>Name ${name}</name> </user>`;
+        const {
+          firstName,
+          lastName,
+          email,
+          userData,
+        } = user.toObject();
+        data += `<user>
+          <name>Name: ${firstName} ${lastName}</name>
+          <email>Email: ${email}</email>
+          <userData>Data: ${userData}</userData>
+        </user>`;
       });
       data += '</users>';
       res.header('Content-Type', 'application/xml');
