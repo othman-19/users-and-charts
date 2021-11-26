@@ -53,6 +53,7 @@ app.use(cors({
   credentials: true,
 }));
 
+// eslint-disable-next-line consistent-return
 app.use(methodOverride((req, res) => {
   if (req.body && typeof req.body === 'object' && '_method' in req.body) {
     const method = req.body._method;
@@ -62,7 +63,7 @@ app.use(methodOverride((req, res) => {
 }));
 
 app.use('/', indexRouter);
-app.use('/api/v1/users', jwtAuth, usersRouter);
+app.use('/api/v1', usersRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
