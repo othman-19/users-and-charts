@@ -1,0 +1,67 @@
+import axios from 'axios';
+
+const getUser = async (id) => {
+  const options = {
+    method: 'GET',
+    url: 'http://localhost:3000/api/v1/users',
+    params: {
+      search_engine: 'v3',
+      userId: id,
+    },
+    headers: {
+      Authorization: '',
+      'Content-Type': 'application/json',
+    },
+  };
+  try {
+    const user = await axios(options);
+    return user;
+  } catch (err) {
+    return {
+      error: err,
+    };
+  }
+};
+
+const getUsers = async () => {
+  const options = {
+    method: 'GET',
+    url: 'http://localhost:3000/api/v1/users',
+    params: {
+      search_engine: 'v3',
+    },
+    headers: {
+      Authorization: '',
+      'Content-Type': 'application/json',
+    },
+  };
+  try {
+    const users = await axios(options);
+    return users;
+  } catch (err) {
+    return {
+      error: err,
+    };
+  }
+};
+
+const getUsersXML = async () => {
+  const options = {
+    method: 'GET',
+    url: 'http://localhost:3000/users.xml',
+    headers: {
+      Authorization: '',
+      'Content-Type': 'application/xml; charset=utf-8',
+    },
+  };
+  try {
+    const users = await axios(options).data;
+    return users;
+  } catch (err) {
+    return {
+      error: err,
+    };
+  }
+};
+
+export { getUser, getUsers, getUsersXML };

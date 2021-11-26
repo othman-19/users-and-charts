@@ -7,7 +7,6 @@ import Navbar from './components/Navbar';
 
 const App = () => (
   <div className="App">
-
     <BrowserRouter>
       <Navbar />
       <Routes />
