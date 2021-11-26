@@ -7,7 +7,6 @@ const mongoose = require('mongoose');
 const debug = require('debug')('api:');
 const cors = require('cors');
 const methodOverride = require('method-override');
-const xml = require('xml');
 
 // const jwtAuth = require('./config/authentication');
 const indexRouter = require('./routes/index');

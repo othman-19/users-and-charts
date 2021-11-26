@@ -4,7 +4,7 @@ const User = require('../models/User');
 const router = express.Router();
 
 /* GET home page. */
-router.get('/xmlUsers', async (req, res, next) => {
+router.get('/users.xml', async (req, res, next) => {
   await User.find()
     .exec()
     .then(users => {
