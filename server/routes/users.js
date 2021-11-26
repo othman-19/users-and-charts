@@ -7,6 +7,15 @@ const User = require('../models/User');
 
 const router = express.Router();
 
+router.get('/users', async (req, res) => {
+  await User.find()
+    .exec()
+    .then(users => {
+      if (!users.length) return res.status(404).end();
+      return res.status(200).json(users);
+    })
+    .catch(err => res.json(err));
+});
 router.post('/signup', (req, res, next) => {
   User.findOne({ email: req.body.email })
     .exec()
