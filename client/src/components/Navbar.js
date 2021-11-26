@@ -1,22 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router';
-import Home from './Home';
-import Users from './UsersList';
-import About from './About';
+import { Link } from 'react-router-dom';
 
-// eslint-disable-next-line react/function-component-definition
 const Navbar = () => (
   <>
     <Link to="/">
-      <Home />
+      Home
     </Link>
 
-    <Link to="/">
-      <Users />
+    <Link to="/users">
+      Users List
     </Link>
 
-    <Link to="/">
-      <About />
+    <Link to="/about">
+      About
     </Link>
   </>
 );
