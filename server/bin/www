@@ -4,9 +4,9 @@
  * Module dependencies.
  */
 
-const http = require("http");
-const debug = require("debug")("blog-api:");
-const app = require("../app");
+const http = require('http');
+const debug = require('debug')('blog-api:');
+const app = require('../app');
 
 /**
   * Get port from environment and store in Express.
@@ -33,8 +33,8 @@ function normalizePort(val) {
   return false;
 }
 
-const port = normalizePort(process.env.PORT || "3000");
-app.set("port", port);
+const port = normalizePort(process.env.PORT || '3000');
+app.set('port', port);
 
 /**
   * Create HTTP server.
@@ -53,21 +53,21 @@ server.listen(port);
   */
 
 function onError(error) {
-  if (error.syscall !== "listen") {
+  if (error.syscall !== 'listen') {
     throw error;
   }
 
-  const bind = typeof port === "string"
+  const bind = typeof port === 'string'
     ? `Pipe ${port}`
     : `Port ${port}`;
 
   // handle specific listen errors with friendly messages
   switch (error.code) {
-    case "EACCES":
+    case 'EACCES':
       console.error(`${bind} requires elevated privileges`);
       process.exit(1);
       break;
-    case "EADDRINUSE":
+    case 'EADDRINUSE':
       console.error(`${bind} is already in use`);
       process.exit(1);
       break;
@@ -82,11 +82,11 @@ function onError(error) {
 
 function onListening() {
   const addr = server.address();
-  const bind = typeof addr === "string"
+  const bind = typeof addr === 'string'
     ? `pipe ${addr}`
     : `port ${addr.port}`;
   debug(`Listening on ${bind}`);
 }
 
-server.on("error", onError);
-server.on("listening", onListening);
+server.on('error', onError);
+server.on('listening', onListening);
