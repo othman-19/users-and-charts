@@ -21,7 +21,6 @@ const jwtAuth = require('./config/authentication');
 mongoose.connect(
   database,
   {
-    useCreateIndex: true,
     useUnifiedTopology: true,
     useNewUrlParser: true,
   },

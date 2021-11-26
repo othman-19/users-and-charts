@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = {
   secret: process.env.SECRET,
   environement: process.env.NODE_ENV,
