@@ -9,13 +9,16 @@ const Search = () => {
     setSearchField({ name: e.target.value });
   };
 
-  const handleSearch = async (name) => {
-    try {
-      const data = await getUsersByName(name);
-      return data;
-    } catch (err) {
-      return err;
-    }
+  const handleSearch = (name) => {
+    (async () => {
+      try {
+        const data = await getUsersByName(name);
+        console.log(data);
+        return data;
+      } catch (err) {
+        return err;
+      }
+    })();
   };
 
   return (

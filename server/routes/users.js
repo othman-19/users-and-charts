@@ -8,7 +8,7 @@ const User = require('../models/User');
 const router = express.Router();
 
 router.get('/users', async (req, res) => {
-  await User.find()
+  await User.find(req.query)
     .exec()
     .then(users => {
       if (!users.length) return res.status(404).end();
