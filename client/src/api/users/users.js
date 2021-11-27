@@ -3,7 +3,7 @@ import axios from 'axios';
 const getUser = async (id) => {
   const options = {
     method: 'GET',
-    url: 'http://localhost:3000/api/v1/users',
+    url: 'http://localhost:3001/api/v1/users',
     params: {
       search_engine: 'v3',
       userId: id,
@@ -26,7 +26,7 @@ const getUser = async (id) => {
 const getUsers = async () => {
   const options = {
     method: 'GET',
-    url: 'http://localhost:3000/api/v1/users',
+    url: 'http://localhost:3001/api/v1/users',
     params: {
       search_engine: 'v3',
     },
@@ -36,7 +36,8 @@ const getUsers = async () => {
     },
   };
   try {
-    const users = await axios(options);
+    const response = await axios(options);
+    const users = response.data;
     return users;
   } catch (err) {
     return {
@@ -48,7 +49,7 @@ const getUsers = async () => {
 const getUsersXML = async () => {
   const options = {
     method: 'GET',
-    url: 'http://localhost:3000/users.xml',
+    url: 'http://localhost:3001/users.xml',
     headers: {
       Authorization: '',
       'Content-Type': 'application/xml; charset=utf-8',
