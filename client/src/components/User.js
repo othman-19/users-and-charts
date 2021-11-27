@@ -1,18 +1,17 @@
 /* eslint-disable react/prop-types */
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { connect } from 'react-redux';
 import { getUser } from '../api/users/users';
+import { getUserAction } from '../redux/actions';
 
-const User = () => {
-  const [user, setUser] = useState({});
+const User = ({ getUserDispatch, user }) => {
   const { userId } = useParams();
   useEffect(() => {
     (async () => {
       try {
-        // Authorization = `Bearer ${token}`;
         const data = await getUser(userId);
-        setUser(data);
-        return user;
+        return getUserDispatch(data);
       } catch (err) {
         return err;
       }
@@ -21,10 +20,23 @@ const User = () => {
   return (
     <div>
       <p> This is the user page</p>
-      {user.firstName}
+      { !user && (
+        <p>loading...</p>
+      )}
+      { user && (
+        <p>{user.firstName}</p>
+      )}
     </div>
 
   );
 };
 
-export default User;
+const mapStateToProps = (state) => ({
+  user: state.user,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  getUserDispatch: (user) => dispatch(getUserAction(user)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(User);
