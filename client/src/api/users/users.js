@@ -14,7 +14,8 @@ const getUser = async (id) => {
     },
   };
   try {
-    const user = await axios(options);
+    const response = await axios(options);
+    const user = response.data;
     return user;
   } catch (err) {
     return {

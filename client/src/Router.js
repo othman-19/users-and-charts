@@ -12,8 +12,8 @@ import About from './components/About';
 const AppRouter = () => (
   <Routes>
     <Route exact path="/" element={<Home />} />
+    <Route path="/users/:userId" element={<User />} />
     <Route path="/users" element={<UsersList />} />
-    <Route path="/users/id" element={<User />} />
     <Route path="/about" element={<About />} />
   </Routes>
 );

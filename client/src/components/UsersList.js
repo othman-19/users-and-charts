@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { getUsers } from '../api/users/users';
 
 const Users = () => {
@@ -19,7 +20,7 @@ const Users = () => {
     <div>
       <p> This is the users list page</p>
       <ul>
-        { users.map((user) => <li>{user.firstName}</li>)}
+        { users.map((user) => <li><Link to={`/users/${user._id}`}>{user.firstName}</Link></li>) }
       </ul>
     </div>
 

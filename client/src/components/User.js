@@ -1,9 +1,11 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { getUser } from '../api/users/users';
 
-const User = ({ userId }) => {
+const User = () => {
   const [user, setUser] = useState();
+  const { userId } = useParams();
   useEffect(() => {
     (async () => {
       try {
@@ -19,7 +21,7 @@ const User = ({ userId }) => {
   return (
     <div>
       <p> This is the user page</p>
-      {user}
+      {/* {user.firstName} */}
     </div>
 
   );
