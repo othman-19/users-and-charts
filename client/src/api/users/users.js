@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+const url = require('url');
+
 const getUser = async (id) => {
   const options = {
     method: 'GET',
@@ -46,6 +48,31 @@ const getUsers = async () => {
   }
 };
 
+const getUsersByName = async (name) => {
+  const params = new url.URLSearchParams({ firstName: name });
+
+  const options = {
+    method: 'GET',
+    url: `http://localhost:3001/api/v1/users/?${params}`,
+    params: {
+      search_engine: 'v3',
+    },
+    headers: {
+      Authorization: '',
+      'Content-Type': 'application/json',
+    },
+  };
+  try {
+    const response = await axios(options);
+    const users = response.data;
+    return users;
+  } catch (err) {
+    return {
+      error: err,
+    };
+  }
+};
+
 const getUsersXML = async () => {
   const options = {
     method: 'GET',
@@ -65,4 +92,6 @@ const getUsersXML = async () => {
   }
 };
 
-export { getUser, getUsers, getUsersXML };
+export {
+  getUser, getUsers, getUsersXML, getUsersByName,
+};
