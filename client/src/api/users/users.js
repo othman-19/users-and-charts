@@ -3,10 +3,9 @@ import axios from 'axios';
 const getUser = async (id) => {
   const options = {
     method: 'GET',
-    url: 'http://localhost:3001/api/v1/users',
+    url: `http://localhost:3001/api/v1/users/${id}`,
     params: {
       search_engine: 'v3',
-      userId: id,
     },
     headers: {
       Authorization: '',

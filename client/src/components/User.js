@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { getUser } from '../api/users/users';
 
 const User = () => {
-  const [user, setUser] = useState();
+  const [user, setUser] = useState({});
   const { userId } = useParams();
   useEffect(() => {
     (async () => {
@@ -21,7 +21,7 @@ const User = () => {
   return (
     <div>
       <p> This is the user page</p>
-      {/* {user.firstName} */}
+      {user.firstName}
     </div>
 
   );
