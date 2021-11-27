@@ -17,8 +17,8 @@ router.get('/users', async (req, res) => {
     .catch(err => res.json(err));
 });
 
-router.get('users/:userId', async (req, res, next) => {
-  await User.find({ _id: req.params.userId })
+router.get('/users/:userId', async (req, res, next) => {
+  await User.findById(req.params.userId)
     .exec()
     .then(user => {
       if (!user) return res.status(404).end();
