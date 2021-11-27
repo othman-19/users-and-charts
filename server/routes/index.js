@@ -31,8 +31,11 @@ router.get('/users.xml', async (req, res, next) => {
     .catch(err => res.json(err));
 });
 
-router.get('/api/v1/welcome', (req, res, next) => {
-  res.json({ message: 'hooray! welcome to users and charts api!' });
+router.get('/', (req, res, next) => {
+  let data = '<?xml version="1.0" encoding="UTF-8"?>';
+  data += '<welcome>hooray! welcome to users and charts api! </welcome>';
+  res.header('Content-Type', 'application/xml');
+  return res.status(200).send(data);
 });
 
 module.exports = router;

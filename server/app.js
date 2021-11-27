@@ -63,7 +63,7 @@ app.use(methodOverride((req, res) => {
 }));
 
 app.use('/', indexRouter);
-app.use('/api/v1', usersRouter);
+app.use('/api/v1/', usersRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

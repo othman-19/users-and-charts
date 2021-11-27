@@ -16,6 +16,21 @@ router.get('/users', async (req, res) => {
     })
     .catch(err => res.json(err));
 });
+
+router.get('users/:userId', async (req, res, next) => {
+  await User.find({ _id: req.params.userId })
+    .exec()
+    .then(user => {
+      if (!user) return res.status(404).end();
+      return res.status(200).json(user);
+    })
+    .catch(err => {
+      res.status(500).json({
+        error: err,
+      });
+    });
+});
+
 router.post('/signup', (req, res, next) => {
   User.findOne({ email: req.body.email })
     .exec()
