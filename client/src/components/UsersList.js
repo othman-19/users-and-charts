@@ -27,7 +27,7 @@ const Users = ({ getUsersDispatch, users }) => {
         <nav aria-label="main mailbox folders">
           <List>
 
-            {users && (
+            {
               users.map(
                 (user) => (
                   <ListItem disablePadding>
@@ -39,7 +39,7 @@ const Users = ({ getUsersDispatch, users }) => {
                   </ListItem>
                 ),
               )
-            )}
+            }
             {!users && (
               <p>loading...</p>
             )}
