@@ -11,8 +11,10 @@ const App = () => (
   <div className="App">
     <BrowserRouter>
       <Navbar />
-      <SearchContainer />
-      <Routes />
+      <div className="flex-div">
+        <SearchContainer />
+        <Routes />
+      </div>
     </BrowserRouter>
     <Footer />
   </div>

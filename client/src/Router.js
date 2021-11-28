@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.css';
 import {
   Routes,
   Route,
@@ -9,11 +10,13 @@ import User from './components/User';
 import About from './components/About';
 
 const AppRouter = () => (
-  <Routes>
-    <Route exact path="/" element={<Home />} />
-    <Route path="/users/:userId" element={<User />} />
-    <Route path="/about" element={<About />} />
-  </Routes>
+  <div className="content">
+    <Routes>
+      <Route exact path="/" element={<Home />} />
+      <Route path="/users/:userId" element={<User />} />
+      <Route path="/about" element={<About />} />
+    </Routes>
+  </div>
 );
 
 export default AppRouter;

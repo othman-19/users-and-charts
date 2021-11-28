@@ -1,6 +1,22 @@
 .App {
   text-align: center;
 }
+.flex-div {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.content {
+  margin: 1rem;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.serchContainer {
+  margin: 1rem;
+  text-align: center;
+}
 
 .App-logo {
   height: 40vmin;
