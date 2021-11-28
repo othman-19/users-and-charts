@@ -1,8 +1,9 @@
 import React from 'react';
+import UsersList from './UsersList';
 
 const SideBar = () => (
   <div>
-    <p> This is the footer</p>
+    <UsersList />
   </div>
 );
 

@@ -5,14 +5,14 @@ import Routes from './Router';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import SearchContainer from './components/SearchContainer';
-import UsersList from './components/UsersList';
+import SideBar from './components/SideBar';
 
 const App = () => (
   <div className="App">
     <BrowserRouter>
       <Navbar />
       <SearchContainer />
-      <UsersList />
+      <SideBar />
       <Routes />
     </BrowserRouter>
     <Footer />
