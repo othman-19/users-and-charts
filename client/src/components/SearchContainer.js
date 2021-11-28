@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Button from '@material-ui/core/Button';
 import SearchBar from './SearchBar';
 import SideBar from './SideBar';
 import { getUsersByName } from '../api/users/users';
@@ -28,9 +29,13 @@ const Search = () => {
         placeholder="Enter user first name ..."
         handleChange={handleChange}
       />
-      <button type="submit" onClick={() => handleSearch(searchField.name)}>
+      <Button
+        variant="outlined"
+        type="submit"
+        onClick={() => handleSearch(searchField.name)}
+      >
         Search
-      </button>
+      </Button>
       <SideBar users={users} />
     </div>
   );
