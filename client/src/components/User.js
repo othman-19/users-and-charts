@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getUser } from '../api/users/users';
 import { getUserAction } from '../redux/actions';
+import UserChart from './UserChart';
 
 const User = ({ getUserDispatch, user }) => {
   const { userId } = useParams();
@@ -29,8 +30,8 @@ const User = ({ getUserDispatch, user }) => {
             {' '}
             {user.lastName}
           </p>
-          <p>{user.email}</p>
           <p>{user.userData}</p>
+          <UserChart id={userId} data={user.userData} />
         </>
       )}
     </div>

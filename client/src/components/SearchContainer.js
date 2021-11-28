@@ -20,7 +20,7 @@ const Search = () => {
         try {
           const data = await getUsersByName(name);
           navigate('/');
-          return setUsers(data);
+          return data ? setUsers(data) : null;
         } catch (err) {
           return err;
         }

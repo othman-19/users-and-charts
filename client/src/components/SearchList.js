@@ -10,27 +10,20 @@ const SearchList = ({ users }) => (
   <Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
     <nav aria-label="main mailbox folders">
       <List>
-        <ListItem disablePadding>
-          {users && (
-            users.map(
-              (user) => (
-                <Typography variant="h5">
-                  <Link to={`/users/${user._id}`} key={user._id}>
-                    {user.firstName}
-                  </Link>
-                </Typography>
-              ),
-            )
-          )}
-          {!users && (
-          <p>loading...</p>
-          )}
-        </ListItem>
+        {users.map(
+          (user) => (
+            <ListItem disablePadding>
+              <Typography variant="h5">
+                <Link to={`/users/${user._id}`} key={user._id}>
+                  {user.firstName}
+                </Link>
+              </Typography>
+            </ListItem>
+          ),
+        )}
       </List>
-
     </nav>
   </Box>
-
 );
 
 export default SearchList;
