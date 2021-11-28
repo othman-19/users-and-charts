@@ -1,5 +1,5 @@
 import React from 'react';
 
-const Home = () => <div>Welcome Home page</div>;
+const Home = () => <h1 className="title">Welcome to Users and Charts</h1>;
 
 export default Home;
