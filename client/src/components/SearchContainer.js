@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import SearchBar from './SearchBar';
+import SideBar from './SideBar';
 import { getUsersByName } from '../api/users/users';
 
 const Search = () => {
   const [searchField, setSearchField] = useState({});
+  const [users, setUsers] = useState(null);
 
   const handleChange = (e) => {
     setSearchField({ name: e.target.value });
@@ -13,8 +15,7 @@ const Search = () => {
     (async () => {
       try {
         const data = await getUsersByName(name);
-        console.log(data);
-        return data;
+        return setUsers(data);
       } catch (err) {
         return err;
       }
@@ -30,6 +31,7 @@ const Search = () => {
       <button type="submit" onClick={() => handleSearch(searchField.name)}>
         Search
       </button>
+      <SideBar users={users} />
     </div>
   );
 };
