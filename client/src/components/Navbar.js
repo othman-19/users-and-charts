@@ -42,6 +42,9 @@ const Navbar = () => {
           <Link to="/" className={classes.link}>
             Home
           </Link>
+          <Link to="/users.xml" className={classes.link}>
+            XML
+          </Link>
 
           <Link to="/about" className={classes.link}>
             About
