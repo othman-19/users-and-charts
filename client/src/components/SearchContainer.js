@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
+import { useNavigate } from 'react-router-dom';
 import SearchBar from './SearchBar';
 import SideBar from './SideBar';
 import { getUsersByName } from '../api/users/users';
@@ -7,6 +8,7 @@ import { getUsersByName } from '../api/users/users';
 const Search = () => {
   const [searchField, setSearchField] = useState({});
   const [users, setUsers] = useState(null);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setSearchField({ name: e.target.value });
@@ -17,6 +19,7 @@ const Search = () => {
       (async () => {
         try {
           const data = await getUsersByName(name);
+          navigate('/');
           return setUsers(data);
         } catch (err) {
           return err;

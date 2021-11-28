@@ -5,7 +5,6 @@ import {
   // Link,
 } from 'react-router-dom';
 import Home from './components/Home';
-import UsersList from './components/UsersList';
 import User from './components/User';
 import About from './components/About';
 
@@ -13,7 +12,6 @@ const AppRouter = () => (
   <Routes>
     <Route exact path="/" element={<Home />} />
     <Route path="/users/:userId" element={<User />} />
-    <Route path="/users" element={<UsersList />} />
     <Route path="/about" element={<About />} />
   </Routes>
 );

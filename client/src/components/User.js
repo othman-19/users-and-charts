@@ -19,12 +19,19 @@ const User = ({ getUserDispatch, user }) => {
   }, [userId]);
   return (
     <div>
-      <p> This is the user page</p>
       { !user && (
         <p>loading...</p>
       )}
       { user && (
-        <p>{user.firstName}</p>
+        <>
+          <p>
+            {user.firstName}
+            {' '}
+            {user.lastName}
+          </p>
+          <p>{user.email}</p>
+          <p>{user.userData}</p>
+        </>
       )}
     </div>
 

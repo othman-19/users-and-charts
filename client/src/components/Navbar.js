@@ -43,10 +43,6 @@ const Navbar = () => {
             Home
           </Link>
 
-          <Link to="/users" className={classes.link}>
-            Users List
-          </Link>
-
           <Link to="/about" className={classes.link}>
             About
           </Link>
