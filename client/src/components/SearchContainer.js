@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import SearchBar from './SearchBar';
 import SideBar from './SideBar';
 import { getUsersByName } from '../api/users/users';
-import '../App.css';
 
 const Search = () => {
   const [searchField, setSearchField] = useState({});

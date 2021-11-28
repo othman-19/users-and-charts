@@ -4,7 +4,7 @@ import UsersList from './UsersList';
 import SearchList from './SearchList';
 
 const SideBar = ({ users }) => (
-  <div>
+  <div className="list">
     {users ? <SearchList users={users} /> : <UsersList />}
   </div>
 );
