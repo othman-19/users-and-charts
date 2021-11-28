@@ -16,7 +16,7 @@ const User = ({ getUserDispatch, user }) => {
         return err;
       }
     })();
-  }, []);
+  }, [userId]);
   return (
     <div>
       <p> This is the user page</p>
