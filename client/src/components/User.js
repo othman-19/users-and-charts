@@ -1,7 +1,7 @@
-/* eslint-disable react/prop-types */
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { getUser } from '../api/users/users';
 import { getUserAction } from '../redux/actions';
 import UserChart from './UserChart';
@@ -46,5 +46,17 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   getUserDispatch: (user) => dispatch(getUserAction(user)),
 });
+
+User.propTypes = {
+  getUserDispatch: PropTypes.func.isRequired,
+  user: PropTypes.shape({
+    firstName: PropTypes.string,
+    lastName: PropTypes.string,
+    email: PropTypes.string,
+    userData: PropTypes.arrayOf(
+      PropTypes.number,
+    ),
+  }).isRequired,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(User);

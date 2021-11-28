@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React, { useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 import * as d3 from 'd3';
 
 const drawChart = (ref, data) => {
@@ -39,6 +39,13 @@ const BarChart = ({ id, data }) => {
     drawChart(ref, data);
   }, [id]);
   return <div ref={ref} id={`#${id}`} />;
+};
+
+BarChart.propTypes = {
+  id: PropTypes.string.isRequired,
+  data: PropTypes.arrayOf(
+    PropTypes.object,
+  ).isRequired,
 };
 
 export default BarChart;

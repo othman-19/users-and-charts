@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 import Box from '@material-ui/core/Box';
 import TextField from '@material-ui/core/TextField';
 
@@ -23,5 +23,10 @@ const SearchBar = ({ placeholder, handleChange }) => (
     />
   </Box>
 );
+
+SearchBar.propTypes = {
+  placeholder: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
+};
 
 export default SearchBar;

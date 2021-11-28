@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Box from '@material-ui/core/Box';
 import List from '@material-ui/core/List';
@@ -31,4 +31,9 @@ const SearchList = ({ users }) => (
   </>
 );
 
+SearchList.propTypes = {
+  users: PropTypes.arrayOf(
+    PropTypes.object,
+  ).isRequired,
+};
 export default SearchList;

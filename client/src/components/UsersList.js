@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Box from '@material-ui/core/Box';
@@ -62,5 +62,12 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   getUsersDispatch: (users) => dispatch(getUsersAction(users)),
 });
+
+Users.propTypes = {
+  getUsersDispatch: PropTypes.func.isRequired,
+  users: PropTypes.arrayOf(
+    PropTypes.object,
+  ).isRequired,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Users);
