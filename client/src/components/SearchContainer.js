@@ -13,14 +13,16 @@ const Search = () => {
   };
 
   const handleSearch = (name) => {
-    (async () => {
-      try {
-        const data = await getUsersByName(name);
-        return setUsers(data);
-      } catch (err) {
-        return err;
-      }
-    })();
+    if (name) {
+      (async () => {
+        try {
+          const data = await getUsersByName(name);
+          return setUsers(data);
+        } catch (err) {
+          return err;
+        }
+      })();
+    }
   };
 
   return (

@@ -2,8 +2,12 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { getUsers } from '../api/users/users';
+import Box from '@material-ui/core/Box';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import { Typography } from '@material-ui/core';
 import { getUsersAction } from '../redux/actions';
+import { getUsers } from '../api/users/users';
 
 const Users = ({ getUsersDispatch, users }) => {
   useEffect(() => {
@@ -18,11 +22,30 @@ const Users = ({ getUsersDispatch, users }) => {
   }, []);
   return (
     <div>
-      <p> This is the users list page</p>
       {users && (
-      <ul>
-        { users.map((user) => <li key={user._id}><Link to={`/users/${user._id}`}>{user.firstName}</Link></li>) }
-      </ul>
+      <Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+        <nav aria-label="main mailbox folders">
+          <List>
+
+            {users && (
+              users.map(
+                (user) => (
+                  <ListItem disablePadding>
+                    <Typography variant="h5">
+                      <Link to={`/users/${user._id}`} key={user._id}>
+                        {user.firstName}
+                      </Link>
+                    </Typography>
+                  </ListItem>
+                ),
+              )
+            )}
+            {!users && (
+              <p>loading...</p>
+            )}
+          </List>
+        </nav>
+      </Box>
       )}
       {!users && (
       <p>loading...</p>
