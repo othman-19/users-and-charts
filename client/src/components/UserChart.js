@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import * as d3 from 'd3';
 
 const drawChart = (ref, data) => {
-  const w = 500;
-  const h = 500;
+  const w = 400;
+  const h = 400;
 
   d3.selectAll('svg').remove();
 
@@ -19,8 +19,8 @@ const drawChart = (ref, data) => {
     .enter()
     .append('rect')
     .attr('x', (d, i) => i * 70)
-    .attr('y', (d) => h - 10 * d)
-    .attr('width', 65)
+    .attr('y', (d) => h - 5 * d)
+    .attr('width', 40)
     .attr('height', (d) => d * 10)
     .attr('fill', 'green');
 
@@ -30,7 +30,7 @@ const drawChart = (ref, data) => {
     .append('text')
     .text((d) => d)
     .attr('x', (d, i) => i * 70)
-    .attr('y', (d) => h - (10 * d) - 3);
+    .attr('y', (d) => h - (5 * d) - 3);
 };
 
 const BarChart = ({ id, data }) => {

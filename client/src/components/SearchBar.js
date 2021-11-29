@@ -7,7 +7,7 @@ const SearchBar = ({ placeholder, handleChange }) => (
   <Box
     component="form"
     sx={{
-      '& > :not(style)': { m: 1, width: '50ch', margin: '1.5rem' },
+      '& > :not(style)': { m: 1, width: '50ch', margin: '0.5rem' },
     }}
     noValidate
     autoComplete="off"

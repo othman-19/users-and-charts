@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   link: {
     textDecoration: 'none',
     color: 'white',
-    fontSize: '20px',
+    fontSize: '1rem',
     marginRight: theme.spacing(30),
     '&:hover': {
       color: 'yellow',
@@ -35,8 +35,8 @@ const Navbar = () => {
     <AppBar position="static">
       <CssBaseline />
       <Toolbar>
-        <Typography variant="h4" className={classes.logo}>
-          Users and Charts
+        <Typography className={classes.logo}>
+          Users/Charts
         </Typography>
         <div className={classes.navlinks}>
           <Link to="/" className={classes.link}>

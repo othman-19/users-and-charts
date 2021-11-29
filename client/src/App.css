@@ -23,7 +23,6 @@
 }
 
 .footer {
-  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -40,11 +39,11 @@ a {
 }
 
 .title {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .paragraph {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 @media (prefers-reduced-motion: no-preference) {
