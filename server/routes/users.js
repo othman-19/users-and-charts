@@ -17,6 +17,7 @@ router.get('/users', async (req, res) => {
       email: 1,
       userData: 1,
     })
+    .lean()
     .exec()
     .then(users => {
       if (!users.length) return res.status(404).end();
@@ -34,6 +35,7 @@ router.get('/users/:userId', async (req, res, next) => {
       email: 1,
       userData: 1,
     })
+    .lean()
     .exec()
     .then(user => {
       if (!user) return res.status(404).end();
