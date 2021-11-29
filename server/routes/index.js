@@ -6,6 +6,14 @@ const router = express.Router();
 /* GET home page. */
 router.get('/users.xml', async (req, res, next) => {
   await User.find()
+    .select({
+      _id: 1,
+      firstName: 1,
+      lastName: 1,
+      email: 1,
+      userData: 1,
+    })
+    .lean()
     .exec()
     .then(users => {
       if (!users.length) return res.status(404).end();

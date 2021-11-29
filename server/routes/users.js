@@ -28,6 +28,14 @@ router.get('/users', async (req, res) => {
 
 router.get('/users/:userId', async (req, res, next) => {
   await User.findById(req.params.userId)
+    .select({
+      _id: 1,
+      firstName: 1,
+      lastName: 1,
+      email: 1,
+      userData: 1,
+    })
+    .lean()
     .exec()
     .then(user => {
       if (!user) return res.status(404).end();
