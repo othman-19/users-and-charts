@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const debug = require('debug')('api:');
 const cors = require('cors');
 const methodOverride = require('method-override');
+const compression = require('compression');
 
 // const jwtAuth = require('./config/authentication');
 const indexRouter = require('./routes/index');
@@ -52,6 +53,10 @@ app.use(cors({
   },
   credentials: true,
 }));
+
+app.use(compression());
+
+app.set('trust proxy', 1);
 
 // eslint-disable-next-line consistent-return
 app.use(methodOverride((req, res) => {
