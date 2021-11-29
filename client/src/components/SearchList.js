@@ -14,8 +14,8 @@ const SearchList = ({ users }) => (
         <List>
           {users.map(
             (user) => (
-              <ListItem disablePadding>
-                <Typography variant="h5">
+              <ListItem>
+                <Typography variant="h6">
                   <Link to={`/users/${user._id}`} key={user._id}>
                     {user.firstName}
                   </Link>

@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import Box from '@material-ui/core/Box';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import { Typography } from '@material-ui/core';
 import { getUsersAction } from '../redux/actions';
 import { getUsers } from '../api/users/users';
 
@@ -30,12 +29,10 @@ const Users = ({ getUsersDispatch, users }) => {
             {
               users.map(
                 (user) => (
-                  <ListItem disablePadding>
-                    <Typography variant="h6">
-                      <Link to={`/users/${user._id}`} key={user._id}>
-                        {user.firstName}
-                      </Link>
-                    </Typography>
+                  <ListItem button>
+                    <Link to={`/users/${user._id}`} key={user._id}>
+                      {user.firstName}
+                    </Link>
                   </ListItem>
                 ),
               )

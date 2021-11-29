@@ -20,6 +20,7 @@ const User = ({ getUserDispatch, user }) => {
   }, [userId]);
   return (
     <div>
+      <UserChart id={userId} data={user.userData} />
       { !user && (
         <p>loading...</p>
       )}
@@ -31,7 +32,6 @@ const User = ({ getUserDispatch, user }) => {
             {user.lastName}
           </p>
           <p>{user.userData}</p>
-          <UserChart id={userId} data={user.userData} />
         </>
       )}
     </div>
