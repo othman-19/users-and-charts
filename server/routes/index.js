@@ -43,7 +43,6 @@ router.get('/', (req, res, next) => {
   data += '<welcome>hooray! welcome to users and charts api! </welcome>';
   data += '<info>For users in XML data use this route /users.xml </info>';
   data += '<info>For users in JSON data use this route /api/v1/users </info>';
-  data += '<info>To get one user JSON data use this route /api/v1/users/[id] </info>';
   res.header('Content-Type', 'application/xml');
   return res.status(200).send(data);
 });
