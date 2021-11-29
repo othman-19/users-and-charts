@@ -4,7 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
-const debug = require('debug')('api:');
+// const debug = require('debug')('api:');
 const cors = require('cors');
 const methodOverride = require('method-override');
 const compression = require('compression');
@@ -25,11 +25,11 @@ mongoose.connect(
     useNewUrlParser: true,
   },
 ).then(() => {
-  debug('DataBase Connected');
-  debug(`app listening on port ${port}!`);
+  console.log('DataBase Connected');
+  console.log(`app listening on port ${port}!`);
 })
   .catch(err => {
-    debug(`update error:  ${err}`);
+    console.log(`update error:  ${err}`);
   });
 
 const app = express();
