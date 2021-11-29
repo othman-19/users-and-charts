@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import * as d3 from 'd3';
 
 const drawChart = (ref, data) => {
-  const w = 300;
-  const h = 400;
+  const w = 500;
+  const h = 500;
 
   d3.selectAll('svg').remove();
 
