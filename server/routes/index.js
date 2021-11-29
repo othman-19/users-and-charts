@@ -13,7 +13,6 @@ router.get('/users.xml', async (req, res, next) => {
       email: 1,
       userData: 1,
     })
-    .lean()
     .exec()
     .then(users => {
       if (!users.length) return res.status(404).end();
