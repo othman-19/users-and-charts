@@ -39,7 +39,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-const allowedOrigins = ['null', 'http://localhost:3000'];
+const allowedOrigins = ['null', 'http://localhost:3000', 'https://users-and-charts.herokuapp.com'];
 app.use(cors({
   origin(origin, callback) {
     if (!origin) return callback(null, true);
