@@ -20,4 +20,6 @@ UserSchema.virtual('url').get(function () {
   return `/users/${this._id}`;
 });
 
+UserSchema.index({ firstName: 1 });
+
 module.exports = mongoose.model('User', UserSchema);

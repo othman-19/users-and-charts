@@ -8,7 +8,16 @@ const User = require('../models/User');
 const router = express.Router();
 
 router.get('/users', async (req, res) => {
-  await User.find(req.query)
+  await User
+    .find(req.query)
+    .select({
+      _id: 1,
+      firstName: 1,
+      lastName: 1,
+      email: 1,
+      userData: 1,
+    })
+    .lean()
     .exec()
     .then(users => {
       if (!users.length) return res.status(404).end();
