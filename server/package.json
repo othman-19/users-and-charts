@@ -7,6 +7,9 @@
     "devstart": "nodemon ./bin/www",
     "serverstart": "DEBUG=api:* npm run devstart"
   },
+  "engines": {
+    "node": "16.13.0"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "casual": "^1.6.2",
