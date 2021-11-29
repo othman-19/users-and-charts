@@ -20,12 +20,9 @@ const User = ({ getUserDispatch, user }) => {
   }, [userId]);
   return (
     <div>
-      <UserChart id={userId} data={user.userData} />
-      { !user && (
-        <p>loading...</p>
-      )}
       { user && (
         <>
+          <UserChart id={userId} data={user.userData} />
           <p>
             {user.firstName}
             {' '}
@@ -33,6 +30,9 @@ const User = ({ getUserDispatch, user }) => {
           </p>
           <p>{user.userData}</p>
         </>
+      )}
+      { !user && (
+        <p>loading...</p>
       )}
     </div>
 
