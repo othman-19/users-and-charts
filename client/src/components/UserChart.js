@@ -4,7 +4,7 @@ import * as d3 from 'd3';
 
 const drawChart = (ref, data) => {
   const w = 300;
-  const h = 300;
+  const h = 400;
 
   d3.selectAll('svg').remove();
 
