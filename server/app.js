@@ -42,7 +42,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 const allowedOrigins = [
   'http://localhost:3000', 
-  //'https://users-and-charts1.vercel.app'
+  'https://users-and-charts1.vercel.app'
 ];
 app.use(cors({
   origin: function (origin, callback) {
