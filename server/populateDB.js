@@ -2,7 +2,7 @@ const casual = require('casual');
 const mongoose = require('mongoose');
 const User = require('./models/User');
 
-const MONGO_DB = 'url';
+const MONGO_DB = "mongodb://othman-19:othmane@users-charts-cluster-shard-00-00.nhwxx.mongodb.net:27017,users-charts-cluster-shard-00-01.nhwxx.mongodb.net:27017,users-charts-cluster-shard-00-02.nhwxx.mongodb.net:27017/?ssl=true&replicaSet=atlas-npajso-shard-0&authSource=admin&retryWrites=true&w=majority";
 mongoose.connect(MONGO_DB, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
