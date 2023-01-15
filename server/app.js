@@ -40,9 +40,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-const allowedOrigins = ['http://localhost:3000', 'https://users-and-charts.herokuapp.com', 'https://users-and-charts1.vercel.app'];
+const allowedOrigins = [
+  'http://localhost:3000', 
+  //'https://users-and-charts1.vercel.app'
+];
 app.use(cors({
-  origin(origin, callback) {
+  origin: function (origin, callback) {
     if (!origin) return callback(null, true);
     if (allowedOrigins.indexOf(origin) === -1) {
       const msg = 'The CORS policy for this site does not '
