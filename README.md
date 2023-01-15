@@ -3,7 +3,7 @@
 USERS AND CHARTS is a web application that displays charts for users.
 
 ## Live Demo
-[API Link](https://users-and-charts.herokuapp.com/) .
+[API Link](https://users-and-charts.onrender.com/) .
 [Frontend Link](https://users-and-charts1.vercel.app/) .
 
 ## Built With
