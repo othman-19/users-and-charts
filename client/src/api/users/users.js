@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'https://users-and-charts.herokuapp.com';
+const url = 'https://users-and-charts.onrender.com';
 
 const getUser = async (id) => {
   const options = {
